@@ -63,3 +63,4 @@ jobs:
           file: ${{ matrix.rt }}/Dockerfile
           push: true
           tags: ghcr.io/${{ github.repository_owner }}/request-tracker:${{ matrix.tag }}
+
