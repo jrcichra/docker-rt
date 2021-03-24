@@ -1,5 +1,5 @@
 ARG IMAGE=jrcichra/request-tracker-base
-ARG TAG=2021-02-20
+ARG TAG=2021-03-23
 FROM ${IMAGE}:${TAG}
 
 LABEL maintainer="Christian Loos <cloos@netsandbox.de>"
@@ -14,13 +14,13 @@ RUN curl -sSL "https://download.bestpractical.com/pub/rt/%%RT_RELEASE%%/rt-%%RT_
 
 WORKDIR /usr/local/src/rt-%%RT_VERSION%%
 RUN ./configure \
-    --disable-gpg \
-    --disable-smime \
-    --enable-developer \
-    --enable-externalauth \
-    --enable-gd \
-    --enable-graphviz \
-    --with-db-type=SQLite \
+  --disable-gpg \
+  --disable-smime \
+  --enable-developer \
+  --enable-externalauth \
+  --enable-gd \
+  --enable-graphviz \
+  --with-db-type=SQLite \
   && make install \
   && make initdb \
   && rm -rf /usr/local/src/*
