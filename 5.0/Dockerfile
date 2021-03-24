@@ -8,7 +8,7 @@ LABEL org.opencontainers.image.source="https://github.com/netsandbox/docker-rt"
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 WORKDIR /usr/local/src
-RUN curl -sSL "https://download.bestpractical.com/pub/rt/release/rt-5.0.1.tar.gz" -o rt.tar.gz \
+RUN curl -ksSl "https://download.bestpractical.com/pub/rt/release/rt-5.0.1.tar.gz" -o rt.tar.gz \
   && echo "6c181cc592c48a2cba8b8df1d45fda0938d70f84ceeba1afc436f16a6090f556  rt.tar.gz" | sha256sum -c \
   && tar -xzf rt.tar.gz
 
